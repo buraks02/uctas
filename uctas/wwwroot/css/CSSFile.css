@@ -1,0 +1,120 @@
+﻿body {
+}
+
+#game-square {
+    border: 3px solid grey;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+    position: relative;
+    width: 300px;
+    height: 300px;
+}
+
+.game-line {
+    position: absolute;
+    width: 3px;
+    height: 3px;
+    background-color: grey;
+}
+
+#gameLine-Vertical {
+    top: 0;
+    height: 100%;
+}
+
+#gameLine-Horizontal {
+    left: 0;
+    width: 100%;
+}
+
+.game-dot {
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    background-color: grey;
+    border-radius: 50%;
+}
+
+#game-dot-0 {
+    top: -8px;
+    left: -8px;
+}
+
+#game-dot-1 {
+    top: -8px;
+    left: 142px;
+}
+
+#game-dot-2 {
+    top: -8px;
+    left: 292px;
+}
+
+#game-dot-3 {
+    top: 142px;
+    left: -8px;
+}
+
+#game-dot-4 {
+    top: 142px;
+    left: 142px;
+}
+
+#game-dot-5 {
+    top: 142px;
+    left: 292px;
+}
+
+#game-dot-6 {
+    top: 292px;
+    left: -8px;
+}
+
+#game-dot-7 {
+    top: 292px;
+    left: 142px;
+}
+
+#game-dot-8 {
+    top: 292px;
+    left: 292px;
+}
+
+.game-stone {
+    display: block;
+    position: relative;
+    float: left;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background-color: black;
+    margin: 1px 5px 1px 5px;
+}
+
+    .game-stone:active {
+        color: maroon;
+    }
+
+#player1-stones, #player2-stones {
+    margin: 5px 0;
+    border: 3px solid grey;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+    position: relative;
+    width: 300px;
+}
+
+#player1-stones > .game-stone {
+    background-color: red;
+}
+
+#player2-stones > .game-stone {
+    background-color: blue;
+}
+
+#game-stone-1 {
+}

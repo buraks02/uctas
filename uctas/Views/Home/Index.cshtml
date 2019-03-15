@@ -1,0 +1,214 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+
+@model uctas.Models.ViewModels.GameViewModel
+
+@{
+    Layout = "_Layout";
+}
+
+<form method="post">
+    <div id="game-square">
+        <div id="gameLine-Vertical" class="game-line"></div>
+        <div id="gameLine-Horizontal" class="game-line"></div>
+
+        <div id="game-dot-@Model.Board.Node1.NodeId" asp-for-node-id="@Model.Board.Node1.NodeId" class="game-dot">
+            <input  asp-for="Board.Node1.NodeId" type="hidden" />
+            <input id="node-player-@Model.Board.Node1.NodeId" asp-for="Board.Node1.PlayerName" type="hidden" />
+            <input id="node-stone-@Model.Board.Node1.NodeId" asp-for="Board.Node1.StoneId" type="hidden" />
+            @if (@Model.Board.Node1.StoneId != null)
+            {
+                uctas.Models.ViewModels.PlayerViewModel player = Model.Board.Node1.PlayerName == Model.Player1.PlayerName ? @Model.Player1 : @Model.Player2;
+                <div id="game-stone-@Model.Board.Node1.StoneId"
+                     class="game-stone"
+                     asp-stone-id="@Model.Board.Node1.StoneId"
+                     asp-player-name="@Model.Board.Node1.PlayerName"
+                     style="background-color:@player.Color ">
+                    <input id=@player.Stones[Model.Board.Node1.StoneId.Value].StoneId asp-for="@player.Stones[Model.Board.Node1.StoneId.Value].NodeId" type="hidden" />
+                </div>
+            }
+        </div>
+
+        <div id="game-dot-@Model.Board.Node2.NodeId" asp-for-node-id="@Model.Board.Node2.NodeId" class="game-dot">
+            <input asp-for="Board.Node2.NodeId" type="hidden" />
+            <input id="node-player-@Model.Board.Node2.NodeId" asp-for="Board.Node2.PlayerName" type="hidden" />
+            <input id="node-stone-@Model.Board.Node2.NodeId" asp-for="Board.Node2.StoneId" type="hidden" />
+            @if (@Model.Board.Node2.StoneId != null)
+            {
+                uctas.Models.ViewModels.PlayerViewModel player = Model.Board.Node2.PlayerName == Model.Player1.PlayerName ? @Model.Player1 : @Model.Player2;
+                <div id="game-stone-@Model.Board.Node2.StoneId"
+                     class="game-stone"
+                     asp-stone-id="@Model.Board.Node2.StoneId"
+                     asp-player-name="@Model.Board.Node2.PlayerName"
+                     style="background-color:@player.Color ">
+                    <input id=@player.Stones[Model.Board.Node2.StoneId.Value].StoneId asp-for="@player.Stones[Model.Board.Node2.StoneId.Value].NodeId" type="hidden" />
+                </div>
+            }
+        </div>
+
+        <div id="game-dot-@Model.Board.Node3.NodeId" asp-for-node-id="@Model.Board.Node3.NodeId" class="game-dot">
+            <input asp-for="Board.Node3.NodeId" type="hidden" />
+            <input id="node-player-@Model.Board.Node3.NodeId" asp-for="Board.Node3.PlayerName" type="hidden" />
+            <input id="node-stone-@Model.Board.Node3.NodeId" asp-for="Board.Node3.StoneId" type="hidden" />
+            @if (@Model.Board.Node3.StoneId != null)
+            {
+                uctas.Models.ViewModels.PlayerViewModel player = Model.Board.Node3.PlayerName == Model.Player1.PlayerName ? @Model.Player1 : @Model.Player2;
+                <div id="game-stone-@Model.Board.Node3.StoneId"
+                     class="game-stone"
+                     asp-stone-id="@Model.Board.Node3.StoneId"
+                     asp-player-name="@Model.Board.Node3.PlayerName"
+                     style="background-color:@player.Color ">
+                    <input id=@player.Stones[Model.Board.Node3.StoneId.Value].StoneId asp-for="@player.Stones[Model.Board.Node3.StoneId.Value].NodeId" type="hidden" />
+                </div>
+            }
+        </div>
+        <div id="game-dot-@Model.Board.Node4.NodeId" asp-for-node-id="@Model.Board.Node4.NodeId" class="game-dot">
+            <input asp-for="Board.Node4.NodeId" type="hidden" />
+            <input id="node-player-@Model.Board.Node4.NodeId" asp-for="Board.Node4.PlayerName" type="hidden" />
+            <input id="node-stone-@Model.Board.Node4.NodeId" asp-for="Board.Node4.StoneId" type="hidden" />
+            @if (@Model.Board.Node4.StoneId != null)
+            {
+                uctas.Models.ViewModels.PlayerViewModel player = Model.Board.Node4.PlayerName == Model.Player1.PlayerName ? @Model.Player1 : @Model.Player2;
+                <div id="game-stone-@Model.Board.Node4.StoneId"
+                     class="game-stone"
+                     asp-stone-id="@Model.Board.Node4.StoneId"
+                     asp-player-name="@Model.Board.Node4.PlayerName"
+                     style="background-color:@player.Color ">
+                    <input id=@player.Stones[Model.Board.Node4.StoneId.Value].StoneId asp-for="@player.Stones[Model.Board.Node4.StoneId.Value].NodeId" type="hidden" />
+                </div>
+            }
+        </div>
+        <div id="game-dot-@Model.Board.Node5.NodeId" asp-for-node-id="@Model.Board.Node5.NodeId" class="game-dot">
+            <input asp-for="Board.Node5.NodeId" type="hidden" />
+            <input id="node-player-@Model.Board.Node5.NodeId" asp-for="Board.Node5.PlayerName" type="hidden" />
+            <input id="node-stone-@Model.Board.Node5.NodeId" asp-for="Board.Node5.StoneId" type="hidden" />
+            @if (@Model.Board.Node5.StoneId != null)
+            {
+                uctas.Models.ViewModels.PlayerViewModel player = Model.Board.Node5.PlayerName == Model.Player1.PlayerName ? @Model.Player1 : @Model.Player2;
+                <div id="game-stone-@Model.Board.Node5.StoneId"
+                     class="game-stone"
+                     asp-stone-id="@Model.Board.Node5.StoneId"
+                     asp-player-name="@Model.Board.Node5.PlayerName"
+                     style="background-color:@player.Color ">
+                    <input id=@player.Stones[Model.Board.Node5.StoneId.Value].StoneId asp-for="@player.Stones[Model.Board.Node5.StoneId.Value].NodeId" type="hidden" />
+                </div>
+            }
+        </div>
+        <div id="game-dot-@Model.Board.Node6.NodeId" asp-for-node-id="@Model.Board.Node6.NodeId" class="game-dot">
+            <input asp-for="Board.Node6.NodeId" type="hidden" />
+            <input id="node-player-@Model.Board.Node6.NodeId" asp-for="Board.Node6.PlayerName" type="hidden" />
+            <input id="node-stone-@Model.Board.Node6.NodeId" asp-for="Board.Node6.StoneId" type="hidden" />
+            @if (@Model.Board.Node6.StoneId != null)
+            {
+                uctas.Models.ViewModels.PlayerViewModel player = Model.Board.Node6.PlayerName == Model.Player1.PlayerName ? @Model.Player1 : @Model.Player2;
+                <div id="game-stone-@Model.Board.Node6.StoneId"
+                     class="game-stone"
+                     asp-stone-id="@Model.Board.Node6.StoneId"
+                     asp-player-name="@Model.Board.Node6.PlayerName"
+                     style="background-color:@player.Color ">
+                    <input id=@player.Stones[Model.Board.Node6.StoneId.Value].StoneId asp-for="@player.Stones[Model.Board.Node6.StoneId.Value].NodeId" type="hidden" />
+                </div>
+            }
+        </div>
+        <div id="game-dot-@Model.Board.Node7.NodeId" asp-for-node-id="@Model.Board.Node7.NodeId" class="game-dot">
+            <input asp-for="Board.Node7.NodeId" type="hidden" />
+            <input id="node-player-@Model.Board.Node7.NodeId" asp-for="Board.Node7.PlayerName" type="hidden" />
+            <input id="node-stone-@Model.Board.Node7.NodeId" asp-for="Board.Node7.StoneId" type="hidden" />
+            @if (@Model.Board.Node7.StoneId != null)
+            {
+                uctas.Models.ViewModels.PlayerViewModel player = Model.Board.Node7.PlayerName == Model.Player1.PlayerName ? @Model.Player1 : @Model.Player2;
+                <div id="game-stone-@Model.Board.Node7.StoneId"
+                     class="game-stone"
+                     asp-stone-id="@Model.Board.Node7.StoneId"
+                     asp-player-name="@Model.Board.Node7.PlayerName"
+                     style="background-color:@player.Color ">
+                    <input id=@player.Stones[Model.Board.Node7.StoneId.Value].StoneId asp-for="@player.Stones[Model.Board.Node7.StoneId.Value].NodeId" type="hidden" />
+                </div>
+            }
+        </div>
+        <div id="game-dot-@Model.Board.Node8.NodeId" asp-for-node-id="@Model.Board.Node8.NodeId" class="game-dot">
+            <input asp-for="Board.Node8.NodeId" type="hidden" />
+            <input id="node-player-@Model.Board.Node8.NodeId" asp-for="Board.Node8.PlayerName" type="hidden" />
+            <input id="node-stone-@Model.Board.Node8.NodeId" asp-for="Board.Node8.StoneId" type="hidden" />
+            @if (@Model.Board.Node8.StoneId != null)
+            {
+                uctas.Models.ViewModels.PlayerViewModel player = Model.Board.Node8.PlayerName == Model.Player1.PlayerName ? @Model.Player1 : @Model.Player2;
+                <div id="game-stone-@Model.Board.Node8.StoneId"
+                     class="game-stone"
+                     asp-stone-id="@Model.Board.Node8.StoneId"
+                     asp-player-name="@Model.Board.Node8.PlayerName"
+                     style="background-color:@player.Color ">
+                    <input id=@player.Stones[Model.Board.Node8.StoneId.Value].StoneId asp-for="@player.Stones[Model.Board.Node8.StoneId.Value].NodeId" type="hidden" />
+                </div>
+            }
+        </div>
+        <div id="game-dot-@Model.Board.Node9.NodeId" asp-for-node-id="@Model.Board.Node9.NodeId" class="game-dot">
+            <input asp-for="Board.Node9.NodeId" type="hidden" />
+            <input id="node-player-@Model.Board.Node9.NodeId" asp-for="Board.Node9.PlayerName" type="hidden" />
+            <input id="node-stone-@Model.Board.Node9.NodeId" asp-for="Board.Node9.StoneId" type="hidden" />
+            @if (@Model.Board.Node9.StoneId != null)
+            {
+                uctas.Models.ViewModels.PlayerViewModel player = Model.Board.Node9.PlayerName == Model.Player1.PlayerName ? @Model.Player1 : @Model.Player2;
+                <div id="game-stone-@Model.Board.Node9.StoneId"
+                     class="game-stone"
+                     asp-stone-id="@Model.Board.Node9.StoneId"
+                     asp-player-name="@Model.Board.Node9.PlayerName"
+                     style="background-color:@player.Color ">
+                    <input id=@player.Stones[Model.Board.Node9.StoneId.Value].StoneId asp-for="@player.Stones[Model.Board.Node9.StoneId.Value].NodeId" type="hidden" />
+                </div>
+            }
+        </div>
+    </div>
+    <div id="player1-stones">
+        <p> Player 1: </p>
+        <input id="player1" asp-for="Player1.PlayerName" type="hidden" />
+        @if (Model.Player1.Stones[0].NodeId == null)
+        {
+            <div id="game-stone-@Model.Player1.Stones[0].StoneId" class="game-stone" asp-stone-id="@Model.Player1.Stones[0].StoneId" asp-player-name="@Model.Player1.PlayerName"
+                 style="background-color:@Model.Player1.Color">
+                <input id=@Model.Player1.PlayerName@Model.Player1.Stones[0].StoneId asp-for="@Model.Player1.Stones[0].NodeId" type="hidden" />
+            </div>
+        }
+        @if (Model.Player1.Stones[1].NodeId == null)
+        {
+            <div id="game-stone-@Model.Player1.Stones[1].StoneId" class="game-stone" asp-stone-id="@Model.Player1.Stones[1].StoneId" asp-player-name="@Model.Player1.PlayerName"
+                 style="background-color:@Model.Player1.Color">
+                <input id=@Model.Player1.PlayerName@Model.Player1.Stones[1].StoneId asp-for="@Model.Player1.Stones[1].NodeId" type="hidden" />
+            </div>
+        }
+        @if (Model.Player1.Stones[2].NodeId == null)
+        {
+            <div id="game-stone-@Model.Player1.Stones[2].StoneId" class="game-stone" asp-stone-id="@Model.Player1.Stones[2].StoneId" asp-player-name="@Model.Player1.PlayerName"
+                 style="background-color:@Model.Player1.Color">
+                <input id=@Model.Player1.PlayerName@Model.Player1.Stones[2].StoneId asp-for="@Model.Player1.Stones[2].NodeId" type="hidden" />
+            </div>
+        }
+    </div>
+    <div id="player2-stones">
+        <p> Player 2: </p>
+        <input id="player1" asp-for="Player2.PlayerName" type="hidden" />
+        @if (Model.Player2.Stones[0].NodeId == null)
+        {
+            <div id="game-stone-@Model.Player2.Stones[0].StoneId" class="game-stone" asp-stone-id="@Model.Player2.Stones[0].StoneId" asp-player-name="@Model.Player2.PlayerName"
+                 style="background-color:@Model.Player2.Color">
+                <input id=@Model.Player2.PlayerName + @Model.Player2.Stones[0].StoneId asp-for="@Model.Player1.Stones[2].NodeId" type="hidden" />
+            </div>
+        }
+        @if (Model.Player2.Stones[1].NodeId == null)
+        {
+            <div id="game-stone-@Model.Player2.Stones[1].StoneId" class="game-stone" asp-stone-id="@Model.Player2.Stones[1].StoneId" asp-player-name="@Model.Player2.PlayerName"
+                 style="background-color:@Model.Player2.Color">
+                <input id=@Model.Player2.PlayerName + @Model.Player2.Stones[1].StoneId asp-for="@Model.Player1.Stones[2].NodeId" type="hidden" />
+            </div>
+        }
+        @if (Model.Player2.Stones[2].NodeId == null)
+        {
+            <div id="game-stone-@Model.Player2.Stones[2].StoneId" class="game-stone" asp-stone-id="@Model.Player2.Stones[2].StoneId" asp-player-name="@Model.Player2.PlayerName"
+                 style="background-color:@Model.Player2.Color">
+                <input id=@Model.Player2.PlayerName + @Model.Player2.Stones[2].StoneId asp-for="@Model.Player1.Stones[2].NodeId" type="hidden" />
+            </div>
+        }
+    </div>
+    <button type="submit" value="Oyna"></button>
+</form>
