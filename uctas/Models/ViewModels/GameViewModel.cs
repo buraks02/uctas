@@ -7,5 +7,6 @@ namespace uctas.Models.ViewModels
         public BoardViewModel Board { get; set; } 
         public PlayerViewModel Player1 { get; set; }
         public PlayerViewModel Player2 { get; set; }
+        public string Message { get; set; }
     }
 }

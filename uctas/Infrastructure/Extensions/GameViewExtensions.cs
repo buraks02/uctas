@@ -13,6 +13,7 @@ namespace uctas.Infrastructure.Extensions
             gameViewModel.Board = game.Board.ToBoardViewModel();
             gameViewModel.Player1 = game.Player1.ToPlayerViewModel();
             gameViewModel.Player2 = game.Player2.ToPlayerViewModel();
+            gameViewModel.Message = game.Message;
 
             return gameViewModel;
         }

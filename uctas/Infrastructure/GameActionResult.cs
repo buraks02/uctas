@@ -10,6 +10,7 @@ namespace uctas.Infrastructure
     public enum ActionResultCode
     {
         OK,
-        FAIL
+        FAIL,
+        FINISHED
     }
 }

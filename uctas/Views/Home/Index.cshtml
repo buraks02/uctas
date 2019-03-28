@@ -10,13 +10,18 @@
 
 <form method="post">
     <div id="game-square">
+        @if(Model.Message != string.Empty){
+            <div>
+                <p>@Model.Message</p>
+            </div>
+        }
         <div id="gameLine-Vertical" class="game-line"></div>
         <div id="gameLine-Horizontal" class="game-line"></div>
 
         <div id="game-dot-@Model.Board.Node1.NodeId" asp-for-node-id="@Model.Board.Node1.NodeId" class="game-dot">
             <input  asp-for="Board.Node1.NodeId" type="hidden" />
-            <input id="node-player-@Model.Board.Node1.NodeId" asp-for="Board.Node1.PlayerName" type="hidden" />
-            <input id="node-stone-@Model.Board.Node1.NodeId" asp-for="Board.Node1.StoneId" type="hidden" />
+            <input id="node-player-@Model.Board.Node1.NodeId" asp-for="@Model.Board.Node1.PlayerName" type="hidden" value="@Model.Board.Node1.PlayerName" />
+            <input id="node-stone-@Model.Board.Node1.NodeId" asp-for="@Model.Board.Node1.StoneId" type="hidden" value="@Model.Board.Node1.StoneId" />
             @if (@Model.Board.Node1.StoneId != null)
             {
                 uctas.Models.ViewModels.PlayerViewModel player = Model.Board.Node1.PlayerName == Model.Player1.PlayerName ? @Model.Player1 : @Model.Player2;
@@ -32,8 +37,8 @@
 
         <div id="game-dot-@Model.Board.Node2.NodeId" asp-for-node-id="@Model.Board.Node2.NodeId" class="game-dot">
             <input asp-for="Board.Node2.NodeId" type="hidden" />
-            <input id="node-player-@Model.Board.Node2.NodeId" asp-for="Board.Node2.PlayerName" type="hidden" />
-            <input id="node-stone-@Model.Board.Node2.NodeId" asp-for="Board.Node2.StoneId" type="hidden" />
+            <input id="node-player-@Model.Board.Node2.NodeId" asp-for="@Model.Board.Node2.PlayerName" type="hidden" value="@Model.Board.Node2.PlayerName" />
+            <input id="node-stone-@Model.Board.Node2.NodeId" asp-for="@Model.Board.Node2.StoneId" type="hidden" value="@Model.Board.Node2.StoneId" />
             @if (@Model.Board.Node2.StoneId != null)
             {
                 uctas.Models.ViewModels.PlayerViewModel player = Model.Board.Node2.PlayerName == Model.Player1.PlayerName ? @Model.Player1 : @Model.Player2;
@@ -49,8 +54,8 @@
 
         <div id="game-dot-@Model.Board.Node3.NodeId" asp-for-node-id="@Model.Board.Node3.NodeId" class="game-dot">
             <input asp-for="Board.Node3.NodeId" type="hidden" />
-            <input id="node-player-@Model.Board.Node3.NodeId" asp-for="Board.Node3.PlayerName" type="hidden" />
-            <input id="node-stone-@Model.Board.Node3.NodeId" asp-for="Board.Node3.StoneId" type="hidden" />
+            <input id="node-player-@Model.Board.Node3.NodeId" asp-for="@Model.Board.Node3.PlayerName" type="hidden" value="@Model.Board.Node3.PlayerName" />
+            <input id="node-stone-@Model.Board.Node3.NodeId" asp-for="@Model.Board.Node3.StoneId" type="hidden" value="@Model.Board.Node3.StoneId" />
             @if (@Model.Board.Node3.StoneId != null)
             {
                 uctas.Models.ViewModels.PlayerViewModel player = Model.Board.Node3.PlayerName == Model.Player1.PlayerName ? @Model.Player1 : @Model.Player2;
@@ -65,8 +70,8 @@
         </div>
         <div id="game-dot-@Model.Board.Node4.NodeId" asp-for-node-id="@Model.Board.Node4.NodeId" class="game-dot">
             <input asp-for="Board.Node4.NodeId" type="hidden" />
-            <input id="node-player-@Model.Board.Node4.NodeId" asp-for="Board.Node4.PlayerName" type="hidden" />
-            <input id="node-stone-@Model.Board.Node4.NodeId" asp-for="Board.Node4.StoneId" type="hidden" />
+            <input id="node-player-@Model.Board.Node4.NodeId" asp-for="Board.Node4.PlayerName" type="hidden" value="@Model.Board.Node4.PlayerName" />
+            <input id="node-stone-@Model.Board.Node4.NodeId" asp-for="Board.Node4.StoneId" type="hidden" value="@Model.Board.Node4.StoneId" />
             @if (@Model.Board.Node4.StoneId != null)
             {
                 uctas.Models.ViewModels.PlayerViewModel player = Model.Board.Node4.PlayerName == Model.Player1.PlayerName ? @Model.Player1 : @Model.Player2;
@@ -81,8 +86,8 @@
         </div>
         <div id="game-dot-@Model.Board.Node5.NodeId" asp-for-node-id="@Model.Board.Node5.NodeId" class="game-dot">
             <input asp-for="Board.Node5.NodeId" type="hidden" />
-            <input id="node-player-@Model.Board.Node5.NodeId" asp-for="Board.Node5.PlayerName" type="hidden" />
-            <input id="node-stone-@Model.Board.Node5.NodeId" asp-for="Board.Node5.StoneId" type="hidden" />
+            <input id="node-player-@Model.Board.Node5.NodeId" asp-for="Board.Node5.PlayerName" type="hidden" value="@Model.Board.Node5.PlayerName" />
+            <input id="node-stone-@Model.Board.Node5.NodeId" asp-for="Board.Node5.StoneId" type="hidden" value="@Model.Board.Node5.StoneId" />
             @if (@Model.Board.Node5.StoneId != null)
             {
                 uctas.Models.ViewModels.PlayerViewModel player = Model.Board.Node5.PlayerName == Model.Player1.PlayerName ? @Model.Player1 : @Model.Player2;
@@ -97,8 +102,8 @@
         </div>
         <div id="game-dot-@Model.Board.Node6.NodeId" asp-for-node-id="@Model.Board.Node6.NodeId" class="game-dot">
             <input asp-for="Board.Node6.NodeId" type="hidden" />
-            <input id="node-player-@Model.Board.Node6.NodeId" asp-for="Board.Node6.PlayerName" type="hidden" />
-            <input id="node-stone-@Model.Board.Node6.NodeId" asp-for="Board.Node6.StoneId" type="hidden" />
+            <input id="node-player-@Model.Board.Node6.NodeId" asp-for="Board.Node6.PlayerName" type="hidden" value="@Model.Board.Node6.PlayerName" />
+            <input id="node-stone-@Model.Board.Node6.NodeId" asp-for="Board.Node6.StoneId" type="hidden" value="@Model.Board.Node6.StoneId" />
             @if (@Model.Board.Node6.StoneId != null)
             {
                 uctas.Models.ViewModels.PlayerViewModel player = Model.Board.Node6.PlayerName == Model.Player1.PlayerName ? @Model.Player1 : @Model.Player2;
@@ -113,8 +118,8 @@
         </div>
         <div id="game-dot-@Model.Board.Node7.NodeId" asp-for-node-id="@Model.Board.Node7.NodeId" class="game-dot">
             <input asp-for="Board.Node7.NodeId" type="hidden" />
-            <input id="node-player-@Model.Board.Node7.NodeId" asp-for="Board.Node7.PlayerName" type="hidden" />
-            <input id="node-stone-@Model.Board.Node7.NodeId" asp-for="Board.Node7.StoneId" type="hidden" />
+            <input id="node-player-@Model.Board.Node7.NodeId" asp-for="Board.Node7.PlayerName" type="hidden" value="@Model.Board.Node7.PlayerName" />
+            <input id="node-stone-@Model.Board.Node7.NodeId" asp-for="Board.Node7.StoneId" type="hidden" value="@Model.Board.Node7.StoneId" />
             @if (@Model.Board.Node7.StoneId != null)
             {
                 uctas.Models.ViewModels.PlayerViewModel player = Model.Board.Node7.PlayerName == Model.Player1.PlayerName ? @Model.Player1 : @Model.Player2;
@@ -129,8 +134,8 @@
         </div>
         <div id="game-dot-@Model.Board.Node8.NodeId" asp-for-node-id="@Model.Board.Node8.NodeId" class="game-dot">
             <input asp-for="Board.Node8.NodeId" type="hidden" />
-            <input id="node-player-@Model.Board.Node8.NodeId" asp-for="Board.Node8.PlayerName" type="hidden" />
-            <input id="node-stone-@Model.Board.Node8.NodeId" asp-for="Board.Node8.StoneId" type="hidden" />
+            <input id="node-player-@Model.Board.Node8.NodeId" asp-for="Board.Node8.PlayerName" type="hidden" value="@Model.Board.Node8.PlayerName" />
+            <input id="node-stone-@Model.Board.Node8.NodeId" asp-for="Board.Node8.StoneId" type="hidden" value="@Model.Board.Node8.StoneId" />
             @if (@Model.Board.Node8.StoneId != null)
             {
                 uctas.Models.ViewModels.PlayerViewModel player = Model.Board.Node8.PlayerName == Model.Player1.PlayerName ? @Model.Player1 : @Model.Player2;
@@ -145,8 +150,8 @@
         </div>
         <div id="game-dot-@Model.Board.Node9.NodeId" asp-for-node-id="@Model.Board.Node9.NodeId" class="game-dot">
             <input asp-for="Board.Node9.NodeId" type="hidden" />
-            <input id="node-player-@Model.Board.Node9.NodeId" asp-for="Board.Node9.PlayerName" type="hidden" />
-            <input id="node-stone-@Model.Board.Node9.NodeId" asp-for="Board.Node9.StoneId" type="hidden" />
+            <input id="node-player-@Model.Board.Node9.NodeId" asp-for="Board.Node9.PlayerName" type="hidden" value="@Model.Board.Node9.PlayerName" />
+            <input id="node-stone-@Model.Board.Node9.NodeId" asp-for="Board.Node9.StoneId" type="hidden" value="@Model.Board.Node9.StoneId" />
             @if (@Model.Board.Node9.StoneId != null)
             {
                 uctas.Models.ViewModels.PlayerViewModel player = Model.Board.Node9.PlayerName == Model.Player1.PlayerName ? @Model.Player1 : @Model.Player2;
@@ -210,5 +215,5 @@
             </div>
         }
     </div>
-    <button type="submit" value="Oyna"></button>
+    <button type="submit" value="Oyna">Make the move</button>
 </form>

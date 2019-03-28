@@ -20,7 +20,7 @@ namespace uctas.Controllers
         [HttpGet]
         public ViewResult Index()
         {
-            game = new Game();
+            //game = new Game();
             GameViewModel gameViewModel = game.ToGameViewModel();
             return View(gameViewModel);
         }
@@ -28,11 +28,27 @@ namespace uctas.Controllers
         [HttpPost]
         public ViewResult Index(GameViewModel gameViewModel)
         {
-            game = gameViewModel.ToGameModel(game);
-            game = AIEngine.Act(game);
-            //TODO: Gameengine entegre edilecek.
-            GameViewModel gameView = game.ToGameViewModel();
-            return View(gameView);
+            Game newGame = gameViewModel.ToGameModel(game);
+            GameActionResult gameActionResultForPlayer = GameEngine.CheckGameAction(game, newGame);
+            if(gameActionResultForPlayer.ActionResultCode == ActionResultCode.FINISHED)
+            {
+                game.Message = "Player1 won!!";
+                return Index();
+            } 
+            //TODO: Add ActionResultCode.FAIL flow
+
+            //game = gameViewModel.ToGameModel(game);
+            newGame = AIEngine.Act(newGame);
+
+            GameActionResult gameActionResultForAI = GameEngine.CheckGameAction(game, newGame);
+            if (gameActionResultForAI.ActionResultCode == ActionResultCode.FINISHED)
+            {
+                game.Message = "AI won!!";
+                game = newGame;
+                return Index();
+            }
+
+            return Index();
         }
     }
 }

@@ -7,6 +7,7 @@ namespace uctas.Models
         public Board Board;
         public Player Player1;
         public Player Player2;
+        public string Message { get; set; }
 
         public Game()
         {
